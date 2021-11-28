@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 007 -DOM</title>
+    <style>
+        body{
+            background-color: yellow;
+            font: normal 20px Arial;
+        }
+        div{
+            border: 1px solid black;
+            background-color: white;
+            margin: auto;
+            width: 500px;
+            padding: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="CSS3">
+        <h1 class="classe">Iniciando estudos DOM</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates laboriosam natus maiores iste perferendis ad blanditiis excepturi voluptas nihil ut autem quam adipisci repellendus, <strong>numquam exercitationem.</strong> Mollitia veniam sapiente assumenda!</p>
+
+        <p id="teste">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates laboriosam natus maiores iste perferendis ad blanditiis excepturi voluptas nihil ut autem quam adipisci repellendus, numquam exercitationem. Mollitia veniam sapiente assumenda!</p>
+
+        <p><a href="#">Clique em mim</a></p>
+    </div>
+
+
+    <!--JavaScript-->
+    <script>
+        /*Selecionando por TAG*/
+        var p1 = window.document.getElementsByTagName('p')[0]
+        window.document.write(p1.innerHTML) 
+        document.write('</br>')
+
+        /*Selecionando por ID*/
+        var  p2 = window.document.getElementById('teste')
+        window.document.write(p2.innerHTML)
+        document.write('</br>')
+
+        /*Selecionando por NOME*/
+        var p3 = window.document.getElementsByName('classe')
+        window.document.write(p3.innerHTML)
+        document.write('</br>')
+
+        /*Selecionando por CLASSE*/
+        var p4 = window.document.getElementsByClassName('classe')[0]
+        window.document.write(p4.innerHTML)
+        document.write('</br>')
+
+        /*Selecionando por SELETOR(CSS)*/
+        var p5 = window.document.querySelector('div#CSS3')
+        p5.style.color='red'
+        var p6 = window.document.querySelectorAll('div#CSS3')
+        p5.style.background = 'black'
+
+    </script>
+</body>
+</html>
