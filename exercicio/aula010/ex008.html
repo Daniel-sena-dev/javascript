@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 007 - Eventos DOM</title>
+    <style>
+        body{
+            background-color: yellow;
+            font: normal 20px Arial;
+        }
+        div{
+            border: 1px solid black;
+            background-color: white;
+            margin: auto;
+            width: 200px;
+            height: 200px;
+            padding: 5px;
+            line-height: 200px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="area">
+        Interaja...
+    </div>
+
+
+    <!--JavaScript-->
+    <script>
+        var area = window.document.getElementById('area')
+        area.addEventListener('click', clicar)
+        area.addEventListener('mouseenter', entrar)
+        area.addEventListener('mouseout', saiu)
+       function clicar() {            
+            area.innerHTML = '<em>Clicou</em>'
+            area.style.background = 'red'
+        }
+
+        function entrar(){
+            area.innerText = 'Entrou!'
+            area.style.background = 'blue'
+        }
+
+        function saiu(){
+            area.innerText = 'Saiu!'
+            area.style.background = 'green'
+        }
+    </script>
+</body>
+</html>

@@ -34,15 +34,22 @@
 
 
     <script>
+        botao1 = document.getElementById('botao1')
+        botao2 = document.getElementById('botao2')
+        botao3 = document.getElementById('botao3')
+        botao1.addEventListener('click', clicar)
+        /*botao2.addEventListener('click', clicar)
+        botao3.addEventListener('click', clicar)*/
+
         var mensagem1 = 'Você clicou no 1º botão!'
         var mensagem2 = 'Você clicou no 2º botão!'
         var mensagem3 = 'Você clicou no 3º botão'
 
-        var clicou1 = document.getElementById("botao1").click()
-        if (clicou1)
-        {
+        function clicar(){
             alert(mensagem1)
         }
+
+        
         
     </script>
 </body>
