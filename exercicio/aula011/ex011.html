@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 007 - Eventos DOM</title>
+    <style>
+        body{
+            background-color: yellow;
+            font: normal 20px Arial;
+        }
+        div{
+            border: 1px solid black;
+            background-color: white;
+            margin: auto;
+            width: 800px;
+            height: 800px;
+            padding: 5px;
+            line-height: 200px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Qual seu país?</h1>
+        <p>Digite sua nacionalidade: <input type="text" name="pais" id="pais">  
+            <input type="button" value="Enviar" onclick="checar()"></p>
+        
+        <p id="saida"></p>
+    </div>
+    
+
+    <!--JavaScript-->
+    <script>        
+        function checar(){
+            var pais = document.querySelector('input#pais')
+            var saida = document.getElementById('saida')
+            var pais_saida = (pais.value)
+            
+            if (pais_saida == "brasileiro" || pais_saida == "Brasileiro"){
+                saida.innerText = `Você é Brasileiro, seja bem-vindo`
+            }else{
+                saida.innerText = `Você é ${pais_saida}, seja bem-vindo`
+            }
+        }
+
+    </script>
+</body>
+</html>
