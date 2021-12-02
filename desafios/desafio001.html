@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mensagens</title>
+    <style>
+        input{
+            width: 90px;
+            height: 80px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Desafio das Mensagens</h1>
+    <input type="button" value="botao1" id="botao" onclick="mensagem()">
+    <input type="button" value="botao2" id="botao" onclick="mensagem()">
+    <input type="button" value="botao3" id="botao" onclick="mensagem()">
+
+
+    <script>
+        
+
+        function mensagem(){
+            var idBotao = document.getElementById('botao')
+            mensagem1 = 'Você apertou o botão 1'
+            mensagem2 = 'Você apertou o botão 2'
+            mensagem3 = 'Você apertou o botão 3'
+            
+            if (idBotao == 1){
+                alert(mensagem1)
+            } else if (idBotao ==2){
+                alert(mensagem2)
+            } else if(idBotao ==3) {
+                alert(mensagem3)
+            }
+        }
+        
+        
+    </script>
+</body>
+</html>
