@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de temperaturas</title>
+    <style>
+        input{
+            height: 50px;
+            margin-bottom: 50px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor de Temperaturas</h1>
+    <input type="button" value="Converter" onclick="converter()">
+
+    <div id="saida">Clique no botão acima para iniciar.</div>
+
+    <script>
+        function converter(){
+            var celsius = prompt("Digite uma temperatura em °C (Celsius)")
+            var saida = document.getElementById('saida')
+            var kelvin = (Number(celsius) + 273.15)
+            var fahrenheit = (Number(celsius) * 1.8) + 32
+
+            saida.innerHTML = `<H2>A temperatura de ${celsius.replace('.' , ',')}°C, corresponde a...</h2>
+                <p>${kelvin.toFixed(2).replace('.' , ',')}°K (Kelvin)</p>
+                <p>${fahrenheit.toFixed(2).replace('.' , ',')}°F (Fahrenheit)</p>
+                
+                `
+
+
+        }
+    </script>
+
+</body>
+</html>

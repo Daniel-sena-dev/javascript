@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de R$ -> US$</title>
+    <style>
+        input{
+            height: 50px;
+            margin-bottom: 50px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body onload="dolar()">
+    <h1>Conversor R$ &rarr; US$</h1>
+    <input type="button" value="Converter" onclick="converter()">
+
+    <div id="saida">Clique no botão acima para iniciar.</div>
+
+    <script>
+        var cotacao = NaN
+
+        function dolar (){
+            cotacao = prompt("Antes de mais nada. Quanto está a contação do dólar agora?")
+        }
+
+
+        function converter(){
+            var carteira = prompt("Quantos R$ você tem na carteira?")   
+            var valorC = carteira/cotacao
+            var saida = document.getElementById('saida')
+            saida.innerHTML = `<strong> Com R$ ${carteira}, você terá U$ ${valorC} </strong>`
+
+                
+        }
+    </script>
+
+</body>
+</html>
