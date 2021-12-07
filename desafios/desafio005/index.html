@@ -5,6 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conversor de medidas</title>
+    <style>
+        input{
+            height: 50px;
+            margin-bottom: 50px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
     <h1>Conversor de Medidas</h1>
@@ -15,12 +22,22 @@
     <script>
         function converter(){
             var converter = prompt("Digite uma distância em metros (m)")
+            var saida = document.getElementById('saida')
             var km = Number(converter) / 1000
             var hm = Number(converter) / 100
             var dam = Number(converter) / 10
-            var dm = Number(converter) / 1000
-            var cm = Number(converter) / 1000
-            var mm = Number(converter) / 1000
+            var dm = Number(converter)  * 10
+            var cm = Number(converter) * 100
+            var mm = Number(converter) * 1000
+            
+            saida.innerHTML = `<h2> A distância de ${converter.replace('.', ',')} metros, corresponde a... </h2> <ul>
+                <li> ${km.toFixed(3).replace('.', ',')} quilômetros (Km)
+                <li> ${hm.toFixed(3).replace('.', ',')} hectômetros (Hm)
+                <li> ${dam.toFixed(3).replace('.', ',')} decâmetros (Dam)
+                <li> ${dm.toFixed(3).replace('.', ',')} decímetros (dm)
+                <li> ${cm.toFixed(3).replace('.', ',')} centímetros (cm)
+                <li> ${mm.toFixed(3).replace('.', ',')} milímetros (mm)
+                </ul>`
         }
     </script>
 
