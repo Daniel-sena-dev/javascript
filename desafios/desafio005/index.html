@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de medidas</title>
+</head>
+<body>
+    <h1>Conversor de Medidas</h1>
+    <input type="button" value="Converter" onclick="converter()">
+
+    <div id="saida">Clique no botão acima para iniciar.</div>
+
+    <script>
+        function converter(){
+            var converter = prompt("Digite uma distância em metros (m)")
+            var km = Number(converter) / 1000
+            var hm = Number(converter) / 100
+            var dam = Number(converter) / 10
+            var dm = Number(converter) / 1000
+            var cm = Number(converter) / 1000
+            var mm = Number(converter) / 1000
+        }
+    </script>
+
+</body>
+</html>

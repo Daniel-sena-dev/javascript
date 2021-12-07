@@ -14,24 +14,24 @@
 </head>
 <body>
     <h1>Desafio das Mensagens</h1>
-    <input type="button" value="botao 1" id="botao1" name="botao"  onclick="mensagem()">
-    <input type="button" value="botao 2" id="botao" name="botao" onclick="mensagem()">
-    <input type="button" value="botao 3" id="botao" name="botao" onclick="mensagem()">
+    <input type="button" value="botao 1" id="botao" name="botao"  onclick="botao1()">
+    <input type="button" value="botao 2" id="botao" name="botao" onclick="botao2()">
+    <input type="button" value="botao 3" id="botao" name="botao" onclick="botao3()">
 
     
         
     <script>
-        function mensagem(){
-            var botao = document.getElementsByName('botao')
-            
-            if (botao[0].onclick){
-                window.alert("Você clicou no botão 1")
-            } else if (botao[1].onclick){
-                window.alert("aaaaaaaaaaaaaaaaaaaaaa")
-            }
-            
+        function botao1(){
+            window.alert("Você clicou no botão 1")          
         }
 
+        function botao2(){
+            window.alert("Você clicou no botão 2")          
+        }
+
+        function botao3(){
+            window.alert("Você clicou no botão 3")          
+        }
     </script>
     
 </body>
