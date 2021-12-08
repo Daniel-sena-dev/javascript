@@ -5,8 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fórmula de Bhaskara</title>
+    <style>
+        input{
+            margin: 20px;
+            height: 50px;
+            width: 80px;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-    
+    <h1>Resolvendo Bhaskara</h1>
+    <input type="button" value="Calcular" onclick="calcular()">
+    <div id="saida">Considerando uma equação no formato <strong>a</strong>x²+<strong>b</strong>x+<strong>c</strong>=0, aperte o botão acima para calcular o valor de &delta; </div>
+
+    <script>
+        function calcular (){
+            var a = Number(prompt("Qual valor de a?"))
+            var b = Number(prompt("Qual valor de b?"))
+            var c = Number(prompt("Qual valor de c?"))
+            var saida = document.getElementById('saida')
+            var delta = Number((b**2) - (4 * a * c))
+            
+            saida.innerHTML = `<h2>Resolvendo Bhaskara</h2>
+            <p>A equação atual é <strong>${a}x²+${b}x+${c}=0</strong></p>
+            O cálculo realizado será <strong>Δ = ${b}² - 4 * ${a} * ${c} </strong>
+            <p>O valorcalculado foi <strong>Δ =  ${delta} </strong></p>
+            `
+        }
+
+    </script>
 </body>
 </html>

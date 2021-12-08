@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preço mudou</title>
+    <style>
+        input{
+            width: 80px;
+            height: 50px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Preço mudou</h1>
+
+    <input type="button" value="Verificar" onclick="verificar()">
+
+    <div id="saida">Clique no botão acima para analisar a mudança de preço.</div>
+
+    <script>
+        function verificar(){
+            var precoAnterior = prompt("Qual era o preço anterior do produto?")
+            var precoAtual = prompt("Qual é o preço atual do produto?")
+            var saida = document.querySelector('div#saida')
+            var porcentagem = NaN
+            
+            if (precoAnterior - precoAtual < 0){ //Aumentou o preço
+                var precoAumentou = precoAtual - precoAnterior
+                porcentagem = (precoAumentou / precoAtual) * 100
+                saida.innerHTML = `<h2>Analisando os valores informados</h2>
+                <p>O produto custava R$ ${precoAnterior} e agora custa R$ ${precoAtual}.</p>
+                <p>Hoje o produto está mais caro.</p>
+                <p>O preço subiu R$ ${precoAumentou} em relação ao preço anterior.</p>
+                <p>Uma variação de ${porcentagem.toFixed(2)}% pra cima.</p>
+                `
+            } else if (precoAnterior - precoAtual > 0){ //Baixou o preço
+                var precoBaixou = precoAnterior - precoAtual
+                porcentagem = (precoBaixou / precoAtual) * 100
+                saida.innerHTML = `<h2>Analisando os valores informados</h2>
+                <p>O produto custava R$ ${precoAnterior} e agora custa R$ ${precoAtual}.</p>
+                <p>Hoje o produto está mais barato.</p>
+                <p>O preço baixou R$ ${precoBaixou} em relação ao preço anterior.</p>
+                <p>Uma variação de ${porcentagem.toFixed(2)}% pra baixo.</p>
+                `
+            } else{
+                saida.innerHTML = ` <h2>Analisando os valores informados</h2>
+                    <p>O preço continua o mesmo.</p>
+                `
+
+            }
+        }
+
+    </script>
+</body>
+</html>
