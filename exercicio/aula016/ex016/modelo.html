@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <header>
+        <h1>Vamos contar</h1>
+    </header>
+    
+
+    <section>
+        <div id="dados">
+            <p>Início: <input type="number" name="inicio" id="txti" placeholder="Digite o número de inicío."></p>
+            <p>Fim: <input type="number" name="final" id="txtf" placeholder="Digite o número de fim."></p>
+            <p>Passo: <input type="number" name="passo" id="txtp" placeholder="Digite o passo."></p>
+            <input type="button" value="Contar" onclick="contar()" id="botao">
+        </div>
+
+        <div id="saida">Preparando a contagem...</div>
+    </section>
+
+    <footer>
+        <p>&copy; <em>CursoemVideo</em></p>
+    </footer>
+
+    <script>
+        function contar(){
+            var entradaI = document.querySelector('input#txti')            
+            var entradaF = document.querySelector('input#txtf')            
+            var entradaP = document.querySelector('input#txtp')
+            
+            var saida = document.querySelector('div#saida')
+
+            if (entradaI.value.length == 0 || entradaF.value.length == 0 || entradaP.value.length == 0){
+                saida.innerHTML = '<strong>Impossível contar!</strong>'
+                
+            } else{
+                saida.innerHTML = 'Contando: <br>'
+                var inicio = Number(entradaI.value)
+                var final = Number(entradaF.value)
+                var passo = Number(entradaP.value)
+
+                if (passo <= 0){
+                    window.alert('Passo inválido! Considereando PASSO = 1!')
+                    passo = 1
+                }
+                if (inicio < final){
+                    //Contagem crescente
+                    for(let c = inicio; c <= final; c+= passo){
+                        saida.innerHTML += ` ${c} \u{1F449} `
+                    }
+
+                } else{
+                    //Contagem descrescente
+                    for (let c = inicio; c >= final; c -= passo){
+                        saida.innerHTML += `${c} \u{1F449} `
+                    }
+                    
+                }
+                saida.innerHTML += ` \u{1F3C1}`
+            }
+            
+
+        }
+    </script>
+
+
+
+
+
+    <!--<script src="script.js"></script>-->
+</body>
+</html>
