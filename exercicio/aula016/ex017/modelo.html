@@ -10,17 +10,23 @@
 <body>
     
     <header>
-        <h1>Hora do dia</h1>
+        <h1>Tabuada</h1>
     </header>
     
 
     <section>
         <div>
-
+            <p>
+                Número: 
+                <input type="number" name="entrada" id="entrada">
+                <input type="button" value="Gerar Tabuada" onclick="tabuada()">
+            </p>
         </div>
 
-        <div>
-
+        <div >
+            <select name="tabuada" id="seltab" size="11" >
+                <option>Digite um número acima.</option>
+            </select>
         </div>
     </section>
 
@@ -28,6 +34,27 @@
         <p>&copy; <em>CursoemVideo</em></p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        function tabuada(){
+            var txtN = document.getElementById('entrada')
+            var seltab = document.getElementById('seltab')
+
+            if (txtN.value.length == 0){
+                window.alert('Por favor, digite um número!')
+            } else{
+                var numeroT = Number(txtN.value)
+                seltab.innerHTML = ''
+                for(let i = 0; i <= 10; i++){
+                    let item = document.createElement('option')
+                    item.text = `${numeroT} X ${i} = ${numeroT * i}`
+                    item.value = `tab${i}`
+                    seltab.appendChild(item)
+                    
+                }
+            }
+        }
+
+
+    </script>
 </body>
 </html>
