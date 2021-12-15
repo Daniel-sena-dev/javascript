@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-color: lightblue;
+    margin: auto;
+    
+}
+
+h1{
+    color: white;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.527);
+    text-align: center;
+    padding: 10px;
+}
+
+section{
+    background-color: white;
+    max-width: 500px;
+    margin: auto;
+    border-radius: 15px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.315);
+    padding: 10px;
+}
+
+#botaoInput{
+    padding: 10px;
+}
+
+select{
+    display: block;
+    padding: 2px;            
+    margin-bottom: 10px;
+}
